@@ -1,0 +1,3 @@
+{"text": "JSONL English document number one for multi-format ingest testing in Siat."}
+{"text": "JSONL English document number two; field name text is the default."}
+{"content": "wrong field should be ignored when text_field is text"}

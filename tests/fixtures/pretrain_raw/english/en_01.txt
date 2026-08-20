@@ -1,0 +1,3 @@
+This is an English general-domain document for the Siat pretraining fixture.
+It contains punctuation, digits 42, and mixed casing deliberately preserved.
+The pipeline must keep symbols and not force lowercase.

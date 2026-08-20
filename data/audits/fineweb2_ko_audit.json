@@ -1,0 +1,149 @@
+{
+  "source": "fineweb2_ko",
+  "language": "ko",
+  "pipeline_version": "siat-data-v1",
+  "unicode_normalization": "NFC",
+  "timestamp_utc": "2026-08-19T08:37:26.959654+00:00",
+  "input": {
+    "path": "data/raw/fineweb2_ko",
+    "files": [
+      "000_00000.parquet"
+    ],
+    "file_count": 1,
+    "disk_bytes": 4844133014,
+    "disk_mb": 4844.133014,
+    "schema_columns": [
+      "text",
+      "id",
+      "dump",
+      "url",
+      "date",
+      "file_path",
+      "language",
+      "language_score",
+      "language_script",
+      "minhash_cluster_size",
+      "top_langs"
+    ],
+    "text_field": "text",
+    "raw_documents": 2783000,
+    "raw_characters": 4579369375,
+    "average_chars_per_document": 1645.4794735896514,
+    "parse_errors": 0
+  },
+  "cleaning": {
+    "filter_config": {
+      "min_chars": 32,
+      "max_repeat_ratio": 0.4,
+      "min_alpha_hangul_ratio": 0.3,
+      "max_whitespace_ratio": 0.5,
+      "max_punct_ratio": 0.45
+    },
+    "filter_reasons": {
+      "low_alpha_hangul": 89,
+      "excessive_punctuation": 4,
+      "repetition": 1
+    },
+    "filtered_documents": 94,
+    "duplicates_removed": 2,
+    "kept_documents": 2782904,
+    "keep_rate": 0.9999655048508803,
+    "hangul_document_ratio": 1.0,
+    "replacement_char_count_in_raw": 5876
+  },
+  "tokenizer": {
+    "path": "tokenizer/siat-tokenizer.json",
+    "sha256": "f4fa405024279079f4adf6ef4e70afa9882f5ea474c67da29f242c86b6fa4a65",
+    "vocab_size": 32000,
+    "eos_token_id": 3,
+    "total_siat_tokens": 1961415177,
+    "eos_count": 2782904,
+    "average_tokens_per_document": 704.8087814024486,
+    "median_tokens_per_document": 428.0,
+    "min_tokens_per_document": 30,
+    "max_tokens_per_document": 134451,
+    "p90": 1423.0,
+    "p95": 2057.0499999999956,
+    "p99": 4436.080000000016,
+    "invalid_token_ids": 0
+  },
+  "scale_estimate": {
+    "model_params": 36837888,
+    "rule_of_thumb": "~20 tokens/param (Chinchilla-style heuristic)",
+    "estimated_tokens_needed": 736757760,
+    "available_tokens": 1961415177,
+    "coverage_vs_estimate": 2.6622253384884607,
+    "tokens_missing_vs_estimate": 0,
+    "tokens_per_mb_observed": 404905.30943954794,
+    "additional_mb_estimate": 0.0,
+    "additional_shards_estimate": 0.0,
+    "note": "estimated_tokens_needed is a heuristic (~20 tok/param), not a guarantee of optimal training quality."
+  },
+  "integrity": {
+    "hangul_preserved_check": true,
+    "original_files_modified": false,
+    "elapsed_seconds": 7835.083174900006
+  },
+  "samples": [
+    {
+      "document_id": "dd28edef59f6a432bc33deb2c051afc0fcd33645b00db47f48296b1743311c28",
+      "chars": 1225,
+      "tokens": 545,
+      "preview": "전력소비량이 폭증하면서 국가 전원 수급에 비상이 걸렸다. 모든 언론에서 전력소비량 내지는 전력생산량을 보도하면서 ‘kW(킬로와트)’라는 단위를 사용했는데, 일부 언론은 이를 ‘kw’라 표기했다. kW와 kw가 혼동을"
+    },
+    {
+      "document_id": "740224bf86de6df1e64531486bfd94b3adc07777f8930109fd230585fc20c0e3",
+      "chars": 3054,
+      "tokens": 1451,
+      "preview": "ISQI CTAL-TAE덤프가 업데이트되면 업데이트된 최신버전을 무료로 제공해드립니다, 우리Buolkab CTAL-TAE 시험자료에서는 각종IT시험에 관심있는분들을 위하여, 여러 가지 인증시험자료를 제공하는 사이트입"
+    },
+    {
+      "document_id": "0f3d985d1fe5db0ff3fe0d8740a50b956d41bfdc457a80bc4482e6c98694bb8c",
+      "chars": 4510,
+      "tokens": 1844,
+      "preview": "아시안게임이 끝나자 경기나 선수에 대한 이야기보다 '병역'에 대한 논의가 분주하다. 축구대표팀과 야구대표팀의 금메달은 '병역특례'에 대한 찬성과 반대 이유를 보여주는 소재가 되어버렸다. 사람들은 뛰어난 재능을 가진 "
+    },
+    {
+      "document_id": "c39bec8cac221f04d20a7edb04fa7084f82216593b8b96d610d905d127101301",
+      "chars": 467,
+      "tokens": 216,
+      "preview": "시편 115 편 1절: 여호와여 영광을 우리에게 돌리지 마옵소서 우리에게 돌리지 마옵소서 오직 주의 인자하심과 진실하심을 인하여 주의 이름에 돌리소서 2절: 어찌하여 열방으로 저희 하나님이 이제 어디 있느냐 말하게 "
+    },
+    {
+      "document_id": "cbee5bd916e8e4892b16c0278a120dc05ae13c2beb5fb5a7e5bcbfba2fc01076",
+      "chars": 1518,
+      "tokens": 641,
+      "preview": "11월3일 8가구 지원 전남 영광 불갑사(주지 만당 스님)와 법보신문 공익법인 일일시호일(대표 심정섭)은 영광군 다문화가정 8가구에 자비나눔 기금 800만원을 지원했다. 불갑사와 일일시호일은 11월3일 영광 군남중학"
+    },
+    {
+      "document_id": "1bc459727011b9228b5c283df67eac44fa4bfa891f8b46a96364533f06adaf26",
+      "chars": 1131,
+      "tokens": 450,
+      "preview": "안녕하세요 봉자씨입니다. 파이썬을 이제 파이썬에 대해서 이런 저런 이야기를 그만하고 파이썬을 설치해 보도록 하겠습니다. 파이썬을 설치하기 위해서는 아래의 사이트 방문을 합니다. 사이트에 방문하여 노란 박스의 부분에 "
+    },
+    {
+      "document_id": "8cff028a9104398237e6874bae06dc1f163be136ffc365e62a166ef28992e4eb",
+      "chars": 7082,
+      "tokens": 2953,
+      "preview": "|[기독일보 노형구 기자] 3.1운동 100주년 기념 전국기독교학교대회가 영락교회에서 21일 오전 10시 반부터 개최됐다. 1부 학술대회, 2부 기독교학교대회로 나뉘어 진행된 이번 전국기독교학교대회는 3.1운동의 핵"
+    },
+    {
+      "document_id": "a70168265e1e3b559e60a41f1bf2ac57fa344308ecc7092ed9b08f8df4343f3f",
+      "chars": 478,
+      "tokens": 207,
+      "preview": "제주도 한라산 CCTV 실시간 영상 시청하는 홈페이지 [제주도CCTV] * 제주도CCTV 홈페이지 주소 : https://cctv.jejudoin.co.kr 한라산 설경, 4계절, 1100고지휴게소, 백록담, 윗세오"
+    },
+    {
+      "document_id": "02cb79d9bcc74aec02426b2281485687efee3cce20db854629c5a19ead442a68",
+      "chars": 1294,
+      "tokens": 572,
+      "preview": "학령인구 감소·청소년 활동 침체·가족중심 체험활동 증가 등 원인 전북교육청, 올 6월 스카우트 지도교사 승진가산점 제도 폐지도 영향 재정난으로 스카우트 차원 청소년 지도자 육성도 어려워 연내 관련법 통과도 어려울 전"
+    },
+    {
+      "document_id": "6dc941032fd9f7edb1d1c92cdece50efa836d03cbacb52a9872564445cb8844e",
+      "chars": 12325,
+      "tokens": 5611,
+      "preview": "한국 현대사에서 손꼽히는 철학자, 안병욱 평전 출간 김형석 교수, 이어령 교수 추천, 오늘날 시야에서 안병욱의 메시지를 새롭게 느낄 수 있도록 안내한 ‘철학평전’ ‘안병욱 인생철학: 생철학자 안병욱 철학평전(김대식,"
+    }
+  ]
+}

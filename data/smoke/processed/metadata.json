@@ -1,0 +1,15 @@
+{
+  "tokenizer": "synthetic",
+  "vocab_size": 128,
+  "dtype": "uint16",
+  "train_tokens": 4096,
+  "val_tokens": 1024,
+  "eos_token_id": null,
+  "validation_ratio": 0.2,
+  "seed": 42,
+  "num_train_documents": 1,
+  "num_val_documents": 1,
+  "train_bin": "train.bin",
+  "val_bin": "val.bin",
+  "synthetic": true
+}

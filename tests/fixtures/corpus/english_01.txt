@@ -1,0 +1,4 @@
+Transformer is a neural network architecture.
+Siat is a small language model project.
+We train a tokenizer from raw text files.
+Byte pair encoding learns subword units.

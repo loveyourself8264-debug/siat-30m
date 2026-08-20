@@ -1,0 +1,5 @@
+Siat는 30M parameter language model입니다.
+가격은 12,500원입니다.
+AI/LLM, Python, PyTorch를 공부하고 있습니다.
+Hugging Face tokenizers 라이브러리로 BPE를 학습합니다.
+Mixed Korean and English sentences should tokenize cleanly.

@@ -1,0 +1,1 @@
+Siat는 30M parameter language model입니다.

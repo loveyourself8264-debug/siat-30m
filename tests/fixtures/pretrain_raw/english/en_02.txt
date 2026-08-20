@@ -1,0 +1,2 @@
+Another English paragraph used for source mixing weight checks in unit tests.
+Document identifiers should be stable across runs with the same seed.

@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "name": "korean_general",
+      "path": "tests/fixtures/pretrain_raw/korean",
+      "format": "txt",
+      "language": "ko",
+      "weight": 0.6,
+      "license": "test-only",
+      "notes": "fixture Korean docs (paths relative to repo root)"
+    },
+    {
+      "name": "english_general",
+      "path": "tests/fixtures/pretrain_raw/english",
+      "format": "txt",
+      "language": "en",
+      "weight": 0.3,
+      "license": "test-only"
+    },
+    {
+      "name": "dup_source",
+      "path": "tests/fixtures/pretrain_raw/dup",
+      "format": "txt",
+      "language": "ko",
+      "weight": 0.05,
+      "notes": "contains duplicate of korean ko_01"
+    },
+    {
+      "name": "bad_quality",
+      "path": "tests/fixtures/pretrain_raw/bad",
+      "format": "txt",
+      "language": "unknown",
+      "weight": 0.05,
+      "notes": "should mostly be filtered"
+    }
+  ]
+}

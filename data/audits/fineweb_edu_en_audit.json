@@ -1,0 +1,201 @@
+{
+  "source": "fineweb_edu_en",
+  "language": "en",
+  "pipeline_version": "siat-data-v1",
+  "unicode_normalization": "NFC",
+  "timestamp_utc": "2026-08-20T03:15:55.410869+00:00",
+  "mode": "fast",
+  "files": [
+    "000_00000.parquet"
+  ],
+  "disk_bytes": 2152819114,
+  "raw_documents": 726000,
+  "kept_documents": 724511,
+  "filtered_documents": 0,
+  "duplicates_removed": 1489,
+  "raw_characters": 3451992934,
+  "kept_characters": 3445223502,
+  "sample_documents": 10000,
+  "sample_characters": 46537906,
+  "sample_tokens": 17409531,
+  "chars_per_token": 2.674664391816078,
+  "estimated_total_tokens": 1288820136,
+  "estimated_token_range": [
+    1211994832,
+    1367124941
+  ],
+  "tokenizer_fingerprint": "f4fa405024279079f4adf6ef4e70afa9882f5ea474c67da29f242c86b6fa4a65",
+  "language_statistics": {
+    "documents_with_language_field": 726000,
+    "language_counts": {
+      "en": 726000
+    },
+    "english_ratio": 1.0,
+    "language_score": {
+      "count": 726000,
+      "mean": 0.9358874377690399,
+      "median": 0.945845901966095,
+      "p05": 0.8571485698223114,
+      "p10": 0.8901724576950073,
+      "minimum": 0.650017261505127,
+      "maximum": 0.9991985559463501
+    },
+    "note": "Sanity only; not used for filtering or deletion."
+  },
+  "education_score_statistics": {
+    "documents_with_int_score": 726000,
+    "by_int_score": {
+      "3": {
+        "documents": 629506,
+        "ratio": 0.8670881542699724
+      },
+      "4": {
+        "documents": 95929,
+        "ratio": 0.132133608815427
+      },
+      "5": {
+        "documents": 565,
+        "ratio": 0.000778236914600551
+      }
+    },
+    "score_ge_4_documents": 96494,
+    "score_ge_4_ratio": 0.13291184573002754,
+    "int_score_5_documents": 565,
+    "int_score_5_ratio": 0.000778236914600551,
+    "sample_by_int_score": {
+      "3": {
+        "documents": 8627,
+        "average_chars": 4598.995247478845,
+        "average_siat_tokens": 1718.9187434797727,
+        "chars_per_token": 2.6770737934689723
+      },
+      "4": {
+        "documents": 1362,
+        "average_chars": 5020.540381791483,
+        "average_siat_tokens": 1888.0330396475772,
+        "chars_per_token": 2.660547153286262
+      },
+      "5": {
+        "documents": 11,
+        "average_chars": 2218.0,
+        "average_siat_tokens": 810.7272727272727,
+        "chars_per_token": 2.739193892444145
+      }
+    },
+    "note": "No score threshold applied in this audit."
+  },
+  "dataset_token_comparison": {
+    "sample_docs_with_token_count": 10000,
+    "dataset_token_count_total": 10168874,
+    "dataset_tokens_per_document": 1016.8874,
+    "siat_tokens_per_document": 1740.9531,
+    "approx_ratio_siat_over_dataset": 1.7120411758470013,
+    "note": "Dataset token_count is not Siat tokens; comparison is audit-only."
+  },
+  "input": {
+    "path": "data/raw/fineweb_edu_en",
+    "format": "parquet",
+    "files": [
+      "000_00000.parquet"
+    ],
+    "file_count": 1,
+    "disk_bytes": 2152819114,
+    "disk_mb": 2152.819114,
+    "schema_columns": [
+      "text",
+      "id",
+      "dump",
+      "url",
+      "file_path",
+      "language",
+      "language_score",
+      "token_count",
+      "score",
+      "int_score"
+    ],
+    "text_field": "text",
+    "raw_documents": 726000,
+    "raw_characters": 3451992934,
+    "average_chars_per_document": 4754.81120385675,
+    "parse_errors": 0,
+    "has_token_count_field": true
+  },
+  "cleaning": {
+    "filter_config": {
+      "min_chars": 32,
+      "max_repeat_ratio": 0.4,
+      "min_alpha_hangul_ratio": 0.3,
+      "max_whitespace_ratio": 0.5,
+      "max_punct_ratio": 0.45,
+      "language_policy": "en"
+    },
+    "filter_reasons": {},
+    "filtered_documents": 0,
+    "duplicates_removed": 1489,
+    "kept_documents": 724511,
+    "kept_characters": 3445223502,
+    "keep_rate": 0.9979490358126721,
+    "hangul_document_ratio": 0.0007411895747614598
+  },
+  "wikipedia_sanity": {
+    "documents_containing_hangul": 537,
+    "documents_containing_latin": 724511,
+    "documents_containing_digits": 631280,
+    "documents_containing_math_like": 107387,
+    "note": "Counts only; not used for filtering."
+  },
+  "long_documents": {
+    "character_median": 2938.0,
+    "character_p50": 2938.0,
+    "character_p90": 9035.099999999999,
+    "character_p95": 13769.049999999996,
+    "character_p99": 35324.36000000007,
+    "character_maximum": 640136,
+    "approx_docs_ge_10k_chars": 61395,
+    "approx_docs_ge_50k_chars": 3492,
+    "token_p50_sample": 1072.0,
+    "token_p90_sample": 3323.4000000000015,
+    "token_p95_sample": 5052.049999999999,
+    "token_p99_sample": 13339.670000000036,
+    "token_maximum_sample": 86918
+  },
+  "token_sample": {
+    "sample_documents": 10000,
+    "sample_characters": 46537906,
+    "sample_tokens": 17409531,
+    "sample_seed": 42,
+    "average_tokens_per_document": 1740.9531,
+    "median_tokens_per_document": 1072.0,
+    "min_tokens_per_document": 99,
+    "max_tokens_per_document": 86918,
+    "p90": 3323.4000000000015,
+    "p95": 5052.049999999999,
+    "p99": 13339.670000000036,
+    "chars_per_token": 2.674664391816078,
+    "eos_included": true
+  },
+  "estimate": {
+    "chars_per_token": 2.674664391816078,
+    "estimated_total_tokens": 1288820136,
+    "estimated_token_range": [
+      1211994832,
+      1367124941
+    ],
+    "method": "character_based_plus_eos",
+    "is_estimate": true
+  },
+  "tokenizer": {
+    "path": "tokenizer/siat-tokenizer.json",
+    "sha256": "f4fa405024279079f4adf6ef4e70afa9882f5ea474c67da29f242c86b6fa4a65",
+    "vocab_size": 32000,
+    "eos_token_id": 3,
+    "invalid_token_ids": 0,
+    "texts_encoded": 10000
+  },
+  "integrity": {
+    "hangul_preserved_check": true,
+    "original_files_modified": false,
+    "full_tokenization_performed": false,
+    "elapsed_seconds": 2333.6610445000115
+  }
+}

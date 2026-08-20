@@ -1,0 +1,139 @@
+{
+  "source": "finewiki_ko",
+  "language": "ko",
+  "pipeline_version": "siat-data-v1",
+  "unicode_normalization": "NFC",
+  "timestamp_utc": "2026-08-19T13:14:57.792189+00:00",
+  "mode": "fast",
+  "files": [
+    "000_00000.parquet",
+    "000_00001.parquet"
+  ],
+  "disk_bytes": 2189740360,
+  "raw_documents": 582035,
+  "kept_documents": 543372,
+  "filtered_documents": 34363,
+  "duplicates_removed": 4300,
+  "raw_characters": 1112625496,
+  "kept_characters": 769183658,
+  "sample_documents": 10000,
+  "sample_tokens": 7142400,
+  "estimated_total_tokens": 383610805,
+  "estimated_token_range": [
+    330193511,
+    441152426
+  ],
+  "tokenizer_fingerprint": "f4fa405024279079f4adf6ef4e70afa9882f5ea474c67da29f242c86b6fa4a65",
+  "input": {
+    "path": "data/raw/finewiki_ko",
+    "format": "parquet",
+    "files": [
+      "000_00000.parquet",
+      "000_00001.parquet"
+    ],
+    "file_count": 2,
+    "disk_bytes": 2189740360,
+    "disk_mb": 2189.74036,
+    "schema_columns": [
+      "text",
+      "id",
+      "wikiname",
+      "page_id",
+      "title",
+      "url",
+      "date_modified",
+      "in_language",
+      "wikidata_id",
+      "bytes_html",
+      "wikitext",
+      "version",
+      "infoboxes",
+      "has_math"
+    ],
+    "text_field": "text",
+    "raw_documents": 582035,
+    "raw_characters": 1112625496,
+    "average_chars_per_document": 1911.6126968309466,
+    "parse_errors": 0
+  },
+  "cleaning": {
+    "filter_config": {
+      "min_chars": 32,
+      "max_repeat_ratio": 0.4,
+      "min_alpha_hangul_ratio": 0.3,
+      "max_whitespace_ratio": 0.5,
+      "max_punct_ratio": 0.45
+    },
+    "filter_reasons": {
+      "excessive_whitespace": 22005,
+      "low_alpha_hangul": 12210,
+      "too_short": 129,
+      "repetition": 18,
+      "excessive_punctuation": 1
+    },
+    "filtered_documents": 34363,
+    "duplicates_removed": 4300,
+    "kept_documents": 543372,
+    "kept_characters": 769183658,
+    "keep_rate": 0.9335727232898365,
+    "hangul_document_ratio": 1.0
+  },
+  "wikipedia_sanity": {
+    "documents_containing_hangul": 543372,
+    "documents_containing_latin": 413520,
+    "documents_containing_digits": 495863,
+    "documents_containing_math_like": 28547,
+    "note": "Counts only; not used for filtering."
+  },
+  "long_documents": {
+    "character_median": 504.0,
+    "character_p90": 2976.0999999999985,
+    "character_p95": 5312.099999999991,
+    "character_p99": 15508.030000000006,
+    "character_maximum": 215063,
+    "approx_docs_ge_10k_chars": 11302,
+    "approx_docs_ge_50k_chars": 456,
+    "token_p95_sample": 2655.149999999998,
+    "token_p99_sample": 8329.110000000002,
+    "token_maximum_sample": 82973
+  },
+  "token_sample": {
+    "sample_documents": 10000,
+    "sample_characters": 14321566,
+    "sample_tokens": 7142400,
+    "sample_seed": 42,
+    "average_tokens_per_document": 714.24,
+    "median_tokens_per_document": 251.0,
+    "min_tokens_per_document": 14,
+    "max_tokens_per_document": 82973,
+    "p90": 1511.1000000000004,
+    "p95": 2655.149999999998,
+    "p99": 8329.110000000002,
+    "chars_per_token": 2.007958891817621,
+    "eos_included": true
+  },
+  "estimate": {
+    "chars_per_token": 2.007958891817621,
+    "estimated_total_tokens": 383610805,
+    "estimated_token_range": [
+      330193511,
+      441152426
+    ],
+    "method": "character_based_plus_eos",
+    "is_estimate": true
+  },
+  "tokenizer": {
+    "path": "tokenizer/siat-tokenizer.json",
+    "sha256": "f4fa405024279079f4adf6ef4e70afa9882f5ea474c67da29f242c86b6fa4a65",
+    "vocab_size": 32000,
+    "eos_token_id": 3,
+    "invalid_token_ids": 0,
+    "texts_encoded": 10000
+  },
+  "integrity": {
+    "hangul_preserved_check": true,
+    "original_files_modified": false,
+    "full_tokenization_performed": false,
+    "elapsed_seconds": 912.694829199987
+  }
+}
