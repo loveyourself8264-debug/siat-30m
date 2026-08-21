@@ -1,3 +1,59 @@
+# Siat-36M
+
+**씨앗** — decoder-only language model implemented from scratch in PyTorch  
+**씨앗** — PyTorch로 처음부터 구현한 decoder-only 언어 모델
+
+```text
+36.84M parameters · BPE tokenizer trained from scratch · RoPE · RMSNorm · SwiGLU · causal MHA
+36.84M 파라미터 · 직접 학습한 BPE 토크나이저 · RoPE · RMSNorm · SwiGLU · causal MHA
+
+BF16 CUDA pretraining validated · 3.28M tokens pilot: val loss 10.20 → 9.61
+BF16 CUDA pretraining 검증 완료 · 3.28M 토큰 파일럿: val loss 10.20 → 9.61
+```
+
+No `nn.Transformer`, `nn.MultiheadAttention`, or pretrained HF model.  
+`nn.Transformer`, `nn.MultiheadAttention`, pretrained HF 모델은 사용하지 않습니다.
+
+## Architecture
+
+36,837,888 parameters (tied embeddings). `max_seq_len=1024`. Learned positional embedding 없음.
+
+```mermaid
+flowchart TB
+  ids["input_ids [B, S]"]
+  emb["Token Embedding  V=32k  D=512"]
+  subgraph blocks [Pre-Norm Block x 6]
+    attnNorm[RMSNorm]
+    mha["Causal MHA + RoPE  8 heads"]
+    attnRes[Residual]
+    ffnNorm[RMSNorm]
+    swiglu["SwiGLU  D=512  F=1536"]
+    ffnRes[Residual]
+    attnNorm --> mha --> attnRes
+    attnRes --> ffnNorm --> swiglu --> ffnRes
+  end
+  finalNorm[Final RMSNorm]
+  lmHead["LM Head  tied"]
+  logitsOut["logits [B, S, V]"]
+  ids --> emb --> attnNorm
+  ffnRes --> finalNorm --> lmHead --> logitsOut
+```
+
+## BF16 Pretraining Pilot
+
+짧은 CUDA 파일럿에서 val loss가 내려가 BF16 mixed-precision 학습 경로가 동작함을 확인했습니다. full pretraining 결과가 아닙니다.
+
+| 항목 | 값 |
+|------|-----|
+| Model | Siat-36M, **36,837,888** params (tied) |
+| Precision / device | BF16 mixed precision, CUDA |
+| Tokens | **3.28M** (pilot) |
+| Val loss | **10.20 → 9.61** |
+
+## 개발 방식
+
+아키텍처, 구현 제약(스크래치 구현, 완성된 Transformer API 금지), 학습·검증 목표는 **직접 설계하고 검수**했습니다. AI coding agent는 boilerplate, 테스트, 반복 구현을 돕는 **implementation accelerator**로 사용했습니다. README에 적은 수치, 체크리스트, 제약 준수는 사람이 확인했습니다.
+
 # Siat (씨앗) 30M
 
 약 **30M parameters** 규모의 **decoder-only causal language model**을 PyTorch로 **처음부터** 구현하고 pretraining하는 학습용 프로젝트입니다.
@@ -39,13 +95,13 @@ Validation ✅
 Checkpoint / Resume ✅
 Basic Logging ✅
 FP32 Pretraining Smoke Test ✅
-BF16 Mixed Precision (impl complete; hardware validation pending)
+BF16 Mixed Precision ✅
 Pretraining Data Pipeline ✅
 FineWeb-2 Korean Token Audit ✅
 FineWiki Korean Fast Audit ✅
 FineWeb-Edu English Fast Audit ✅
 Corpus Selection
-Pretraining Pilot
+Pretraining Pilot ✅
 Full Pretraining
 Evaluation
 Inference / Generation
@@ -787,7 +843,7 @@ python -m train.pretrain --train-data ... --precision bf16
 | BF16 automated tests | skipped with reason `BF16 not supported on this test device` |
 | Unsupported request | clear `RuntimeError` / smoke `BF16_UNSUPPORTED` (no silent fallback) |
 
-BF16 implementation complete; hardware validation pending (need BF16-capable CUDA or CPU support to mark ✅).
+BF16 CUDA pretraining validated on a 3.28M-token pilot (val loss 10.20 → 9.61). CI/CPU still skips BF16 tests when the device does not support it.
 
 ## Pretraining Data Pipeline
 
@@ -911,13 +967,13 @@ Validation ✅
 Checkpoint / Resume ✅
 Basic Logging ✅
 FP32 Pretraining Smoke Test ✅
-BF16 Mixed Precision (impl complete; hardware validation pending)
+BF16 Mixed Precision ✅
 Pretraining Data Pipeline ✅
 FineWeb-2 Korean Token Audit ✅
 FineWiki Korean Fast Audit ✅
 FineWeb-Edu English Fast Audit ✅
 Corpus Selection
-Pretraining Pilot
+Pretraining Pilot ✅
 Full Pretraining
 Evaluation
 Inference / Generation
